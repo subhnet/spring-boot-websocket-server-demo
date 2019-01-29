@@ -41,4 +41,10 @@ public class InMessage {
 		this.message = message;
 	}
 
+	@Override
+	public String toString() {
+		return "InMessage [senderId=" + senderId + ", senderName=" + senderName + ", timestamp=" + timestamp
+				+ ", message=" + message + "]";
+	}
+
 }

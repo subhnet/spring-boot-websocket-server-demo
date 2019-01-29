@@ -21,8 +21,9 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 	public void configureMessageBroker(MessageBrokerRegistry config) {
 
 		// clients will subscribe to this subscription
-		config.enableSimpleBroker("/chat");
+		// config.enableSimpleBroker("/chat");
 
 		config.setApplicationDestinationPrefixes("/app");
+//		.enableSimpleBroker("/topic");
 	}
 }
