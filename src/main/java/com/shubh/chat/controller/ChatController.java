@@ -20,6 +20,16 @@ public class ChatController {
 
 		return new OutMessage(msg.getMessage());
 	}
+	
+	@MessageMapping("/userupdates")
+	@SendTo("/topic/userupdates")
+	public String handleTypingEvents(String msg) throws InterruptedException {
+		System.out.println("Sending to all my subscribers..." + msg.toString());
+		Thread.sleep(1000);
+
+		return "true";
+	}
+	
 
 	@MessageMapping("/send/message")
 	public void onReceivedMesage(String message) {
