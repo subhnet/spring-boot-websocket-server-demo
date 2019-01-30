@@ -6,13 +6,15 @@ public class User {
 	private String lastName;
 	private String shortName;
 	private String userType;
+	private String event;
 
-	public User(String firstName, String lastName, String shortName, String userType) {
+	public User(String firstName, String lastName, String shortName, String userType, String event) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.shortName = shortName;
 		this.userType = userType;
+		this.event = event;
 	}
 
 	public String getFirstName() {
@@ -46,5 +48,14 @@ public class User {
 	public void setUserType(String userType) {
 		this.userType = userType;
 	}
+
+	public String getEvent() {
+		return event;
+	}
+
+	public void setEvent(String event) {
+		this.event = event;
+	}
+
 
 }

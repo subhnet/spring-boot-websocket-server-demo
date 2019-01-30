@@ -17,7 +17,7 @@ public class ChatController {
 	@SendTo("/topic")
 	public OutMessage handleMessaging(InMessage msg) throws InterruptedException {
 		System.out.println("Sending msg to all subscribers..." + msg.toString());
-		Thread.sleep(1000);
+//		Thread.sleep(1000);
 
 		return new OutMessage(msg.getMessage());
 	}
@@ -25,8 +25,10 @@ public class ChatController {
 	@MessageMapping("/userupdates")
 	@SendTo("/topic/userupdates")
 	public User handleTypingEvents(User user) throws InterruptedException {
-		System.out.println("Sending to all my subscribers..." + user.toString());
-		Thread.sleep(1000);
+		if(null != user) {
+			System.out.println("Sending to all my subscribers..." + user.toString());
+		}
+//		Thread.sleep(1000);
 
 		return user;
 	}
